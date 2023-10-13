@@ -41,9 +41,6 @@ from ieat_econetwork import getspecies_velocity
 
 app_ui = ui.page_fluid(
     ui.h2("This is iEAT, interactive Ecological Analysis Network"),
-    ui.h3("---------"),
-    ui.h3("Bodemschuifspanning τmax (N/m2) geometrie voorjaar 2021"),
-    ui.h3("---------"),
     ui.div(
         # ui.input_slider("zoom", "Map zoom level", value=14, min=1, max=18),
         ui.output_ui("map_bounds"),
@@ -65,7 +62,7 @@ app_ui = ui.page_fluid(
             {"class": "card"},
             ui.div(
                 {"class": "card-body"},
-                ui.h5({"class": "card-title m-0"}, "Heatmap"),
+                ui.h5({"class": "card-title m-0"}, "Species suitability"),
             ),
             ui.div(
                 {"class": "card-body overflow-auto pt-0"},
