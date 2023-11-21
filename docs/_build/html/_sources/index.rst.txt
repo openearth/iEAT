@@ -9,8 +9,9 @@ Welcome to iEAT's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
-
+   :titlesonly:
+   
+   introduction
 
 Indices and tables
 ==================
