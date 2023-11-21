@@ -1,4 +1,4 @@
-Introduction
+Introductie
 ============
 
 Waarom een netwerk perspectief?
@@ -8,7 +8,7 @@ Veranderingen in de intensiteit van drukken, zoals klimaat of scheepvaart, beïn
 In de figuur hieronder een voorbeeld van de complexiteit van interacties tussen een drukfactor (in dit geval stuwen) en de biota.
 
 
-.. image:: relatieschema-intro.png
+.. image:: images/relatieschema-intro.png
 
 
 De veranderingen in stuurfacturen veroorzaakt door de drukfactoren hebben op individuele soorten een verschillend effect. 

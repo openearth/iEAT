@@ -12,6 +12,12 @@ Welcome to iEAT's documentation!
    :titlesonly:
    
    introduction
+   state_of_art
+   vision_and_goal
+   conceptual_implementation
+   practical_implementation
+   roadmap
+
 
 Indices and tables
 ==================
