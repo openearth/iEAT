@@ -43,6 +43,7 @@ Libraries en database
 Als database wordt een geografische database gebruikt. De voorkeur gaat daarbij uit naar PostgreSQL/PostGIS. Deze open source database geeft alle mogelijkheden
 om een GraphQL DDL op te nemen en heeft tevens ruimtelijke functionaliteit beschikbaar.
 Naast Python worden de volgende packages gebruikt:
+
 - graphql-python-api
 - ariadne 
 - flask 
