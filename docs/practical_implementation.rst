@@ -13,6 +13,9 @@ Een mockup van de applicatie is als animatie opgenomen, zie daarvoor
 
 .. raw:: html <video width="630" height="300" src="https://github.com/openearth/iEAT/assets/6429095/d1ed9c22-c4c6-487e-8944-cb77249ee5aa"></video>
 
+`Bekijk de video <https://github.com/openearth/iEAT/assets/6429095/d1ed9c22-c4c6-487e-8944-cb77249ee5aa>`
+
+
 Data gebruik
 -----------------
 Als voorbeeld van een drukfactor is de stroomsnelheid gebruikt. De gegevens, zijn afkomstig van een scenario berekening met RWS BaseLine voor project
