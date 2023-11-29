@@ -11,7 +11,11 @@ De drukfactoren bestaan uit ruimtelijke gegevens die uit baseline applicaties op
 
 Een mockup van de applicatie is als animatie opgenomen, zie daarvoor 
 
-`Bekijk de video <https://github.com/openearth/iEAT/assets/6429095/d1ed9c22-c4c6-487e-8944-cb77249ee5aa>`
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://github.com/openearth/iEAT/assets/6429095/d1ed9c22-c4c6-487e-8944-cb77249ee5aa" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
 
 
 Data gebruik
