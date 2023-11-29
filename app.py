@@ -25,6 +25,7 @@
 # your own tools.
 
 from pyproj import Transformer
+import pandas as pd
 import ipyleaflet as L
 import datetime
 from htmltools import css
@@ -63,14 +64,15 @@ app_ui = ui.page_fluid(
             ui.div(
                 {"class": "card-body"},
                 ui.h5({"class": "card-title m-0"}, "Species suitability"),
+                ui.input_text("suitability", "Fish and values"),
             ),
             ui.div(
                 {"class": "card-body overflow-auto pt-0"},
-                ui.output_table("table"),
+                # ui.output_table("suitability"),
+                ui.output_text("suitability",),
             ),
             ui.div(
-                {"class": "card-footer"},
-                ui.input_numeric("table_rows", "No Species to display", 5),
+                ui.output_data_frame("grid"),
             ),
         ),
     )
@@ -84,16 +86,17 @@ def crstransform(coords, fromcrs="EPSG:4326", tocrs="EPSG:28992"):
     return x, y
 
 
-def on_location_changed(event, marker):
-    # Do some computation given the new marker location, accessible from `event['new']`
-    # print(str(datetime.datetime.now()))
-    location = marker.location
-    x, y = crstransform(location)
-    # print(getdata((198541, 403313)))
-    value = getdata((x, y))
-    species = getspecies_velocity(value)
-    print(value, species)
-    pass
+# def on_location_changed(event, marker):
+#     # Do some computation given the new marker location, accessible from `event['new']`
+#     # print(str(datetime.datetime.now()))
+#     location = marker.location
+#     x, y = crstransform(location)
+#     # print(getdata((198541, 403313)))
+#     value = getdata((x, y))
+#     species = getspecies_velocity(value)
+#     print(value, species)
+#     return species
+# pass
 
 
 def layerref():
@@ -126,6 +129,28 @@ def server(input, output, session):
     # marker.observe(on_location_changed, "location")
     marker.observe(lambda event: on_location_changed(event, marker), "location")
 
+    species = ()
+
+    def on_location_changed(event, marker):
+        # Do some computation given the new marker location, accessible from `event['new']`
+        # print(str(datetime.datetime.now()))
+        location = marker.location
+        x, y = crstransform(location)
+        # print(getdata((198541, 403313)))
+        value = getdata((x, y))
+        species, df = getspecies_velocity(value)
+
+        atxt = "Fish and values"
+        for i in range(len(species)):
+            atxt = atxt + "\n" + species[i][0] + " " + str(species[i][1])
+        print(atxt)
+        ui.update_text("suitability", value=atxt)
+        ui.update_text("suitability", value=df.to_json())
+
+    # print(value, species)
+
+    # print("is hier dan ook de data nog beschikbaar", species)
+
     # When the slider changes, update the map's zoom attribute (2)
     @reactive.Effect
     def _():
@@ -136,8 +161,17 @@ def server(input, output, session):
     # def _():
     #    ui.update_slider("zoom", value=reactive_read(map, "zoom"))
 
-    # Everytime the map's bounds change, update the output message (3)
-    @output
+    # @output
+    # @render.text
+    # @reactive.Effect
+    # def suitability():
+    #     # return f"suitability: zet hier"
+    #     atxt = "Fish and values"
+    #     for i in range(len(species)):
+    #         atxt = atxt + "\n" + species[i][0] + " " + str(species[i][1])
+    #     print(atxt)
+    #     ui.update_text("suitability", value=atxt)
+
     @render.ui
     def map_bounds():
         center = reactive_read(map, "center")

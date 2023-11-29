@@ -24,6 +24,8 @@
 # Sign up to recieve regular updates of this function, and to contribute
 # your own tools.
 
+import pandas as pd
+
 
 def getspecies_velocity(velocity):
     """
@@ -47,8 +49,57 @@ def getspecies_velocity(velocity):
     dctspecies["Atlantische steur"] = (1, 5)
     dctspecies["elft"] = (0.05, 5)
 
-    species = "Barbeel"
-    velocity = velocity / 10
-    vals = dctspecies[species]
-    res = False if velocity < vals[0] else False if velocity >= vals[1] else True
-    return res
+    fb = []
+    for sp in dctspecies.keys():
+        velocity = velocity / 50
+        vals = dctspecies[sp]
+        res = False if velocity < vals[0] else False if velocity >= vals[1] else True
+        fb.append((sp, res))
+        # print(sp, res)
+
+    df = pd.DataFrame(fb, columns=["fish", "occurence"])
+    return fb, df
+
+
+def testing():
+    atxt = ""
+    species = getspecies_velocity(15.2)
+    for i in range(len(species)):
+        atxt = atxt + "\n" + species[i][0] + " " + str(species[i][1])
+    print(atxt)
+    atxt = f"{species}".strip("[]")
+
+    print(atxt)
+
+
+def heatmap():
+    """
+    actions== install numpy and seaborn
+    https://www.statology.org/heatmap-python/
+    """
+
+    import numpy as np
+    import pandas as pd
+    import seaborn as sns
+
+    # create a dataset
+    np.random.seed(0)
+    data = {
+        "day": np.tile(["Mon", "Tue", "Wed", "Thur", "Fri"], 5),
+        "week": np.repeat([1, 2, 3, 4, 5], 5),
+        "sales": np.random.randint(0, 50, size=25),
+    }
+
+    df = pd.DataFrame(data, columns=["day", "week", "sales"])
+    df = df.pivot(index="day", columns="week", values="sales")
+    sns.heatmap(df)
+
+    np.random.seed(0)
+    data = {
+        "species": np.tile(["Barbeel", "Atlantische zalm", "Atlantische steur"], 3),
+        "voorkomen": np.repeat([1, 0, 1], 3),
+        "waarde": np.random.randint(0, 1, size=9),
+    }
+    df = pd.DataFrame(data, columns=["species", "voorkomen", "waarde"])
+    df = df.pivot(index="species", columns="voorkomen", values="waarde")
+    sns.heatmap(df)
