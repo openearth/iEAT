@@ -28,4 +28,9 @@ In het huidige beleid, inrichting en beheer van rivieren wordt die samenhang en 
 Met de huidige staat van modellen (in gebruik voor RWS) kunnen we nu voorspellen dat een soort kan overleven, en tegelijkertijd voorspellen dat het voedsel van
 die soort niet overleeft. Het verband wordt niet gelegd, er wordt alleen naar de totale biodiversiteit gekeken.
 Zonder de samenhang mee te nemen kunnen de huidige voorspellingen kunnen onbedoeld positief uitpakken voor ecologie en zo tot verkeerde 
-besluiten leiden.\
+besluiten leiden.
+
+**iEAT verklaard**
+
+iEAT is het acronym voor interactieve Ecologische Analyste Tool (interactive Ecological Anaysis Tool)
+\
