@@ -14,7 +14,7 @@ Een mockup van de applicatie is als animatie opgenomen, zie daarvoor
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://github.com/openearth/iEAT/blob/main/docs/images/ieat_mockup_ythd.mp4" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        <iframe src="https://github.com/openearth/iEAT/assets/6429095/e516bc4e-9d6a-40b4-955d-16b0b66e3b07" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
 
