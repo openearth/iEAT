@@ -37,12 +37,31 @@ de gebruikte packages.
 
 Een prototype
 -----------------
-Een prototype in een Python Shiny applicatie maakt het mogelijk om de cursor te verschuiven over de uitkomsten die als OGC WFS worden
+Er is een prototype beschikbaar van een Python Shiny applicatie die het mogelijk maakt om de cursor te verschuiven over de uitkomsten die als OGC WFS worden
 aangeboden. De waarde van de cursor wordt uit de data opgehaald. Vervolgens wordt een opzoektabel geraadpleegd waarin per soort een range van stroomsnelheden is opgenomen. Als 
 de stroomsnelheid binnen de range valt, dan kan een soort daar voorkomen (als hypotethisch geval).
 Hieronder een impressie van dat prototype.
 
 .. image:: images/ieat_prototype.png
+
+Dit is overigens niet verder gebracht. Het idee om een dashboard achtige applicatie te maken waarbij diverse typen visualisaties worden toegepast vereist een minder strikte omgeving dan een
+dashboard ontwikkelomgeving. In het algemeen is het aantal beperkingen wat groter dan in een omgeving gebaseerd op web technologie. Bovendien is een webomgeving ook beter overdraagbaar (geen issue eigenlijk), 
+terwijl een python dashboard allerlei voorwaarden stelt aan de omgeving waarin het gebruikt wordt. 
+
+Het maken van dit prototype heeft echter een belangrijke bijdrage geleverd aan de manier waarop ecologische netwerk gegevens gekoppeld kunnen worden aan fysische gegevens (drukfactoren). 
+Door de flexibiliteit van data die via gestandaardiseerde protocollen beschikbaar zijn (lees de OGC Services zoals door de Rijksoverheid worden gepromotoot en door Geonovum en PDOK worden geïmplementeerd) is het
+mogelijk gemakkelijk te kunnen wisselen van databron (het is immers een link waarbij het leesdeel data de data inlees alleen wijzigt van adres, niet van functionaliteit).
+
+Voorstel
+-----------------
+De animatie van de mockup hierboven laat een op web technologie gebaseerd product zien. Het voorstel is dat er een basisopzet is met een aantal vast elementen:
+- kaartcomponent (met de gebruikelijke opties, inzoomen, navigeren en een zoekmogelijkheid om op toponiemen te kunnen zoeken)
+- keuze opties (uiteraard staan deze nog niet vast)
+- een visualisatie componenten die geactualiseerd wordt middels de waarden van de laag uit het scenario
+
+De exacte layout van zowel de look and feel als gebruikte data dient in een aantal sessies tot stand te komen, alsmede de 'knoppen' waaraan gedraaid kan worden om het effect op
+ecologische netwerken te kunnen bepalen. Er is al wel een goed idee wat betreft de te gebruiken software en andere middelen. Dat wordt in het hoofdstuk Libraries en database verder
+uitgewerkt. 
 
 Libraries en database
 -----------------
