@@ -60,18 +60,38 @@ De animatie van de mockup hierboven laat een op web technologie gebaseerd produc
 - een visualisatie componenten die geactualiseerd wordt middels de waarden van de laag uit het scenario
 
 De exacte layout van zowel de look and feel als gebruikte data dient in een aantal sessies tot stand te komen, alsmede de 'knoppen' waaraan gedraaid kan worden om het effect op
-ecologische netwerken te kunnen bepalen. Er is al wel een goed idee wat betreft de te gebruiken software en andere middelen. Dat wordt in het hoofdstuk Libraries en database verder
+ecologische netwerken te kunnen bepalen. Er is al wel een voorstel wat betreft de te gebruiken software en andere middelen. Dat wordt in het hoofdstuk Libraries en database verder
 uitgewerkt. 
 
 Libraries en database
 -----------------
 Als database wordt een geografische database gebruikt. De voorkeur gaat daarbij uit naar PostgreSQL/PostGIS. Deze open source database geeft alle mogelijkheden
-om een GraphQL DDL op te nemen en heeft tevens ruimtelijke functionaliteit beschikbaar.
+om een GraphQL DDL op te nemen en heeft tevens ruimtelijke functionaliteit beschikbaar en er is veel ervaring om een gebruikersscherm.
 Naast Python worden de volgende packages gebruikt:
 
-- graphql-python-api
-- ariadne 
-- flask 
-- flask-sqlalchemy 
-- flask-cors
-- psycopg2-binary
+- ariadne (package voor intergratie van GraphQL en Python)
+- flask (web server) 
+- flask-cors (maakt het mogelijk om over domeinen data op een veilige manier uit te wisselen)
+- flask-sqlalchemy (voor communicatie met de database, maken van tabelobjecten en opleggen relaties)
+- psycopg2-binary (database specifiek dialect package om te communiceren met PostgreSQL)
+
+
+Overige onderzochte mogelijkheden.
+-----------------
+
+Er zijn legio voorbeelden waarbij ecologische netwerken worden gepresenteerd, echter daar gaat het vaak om op zichzelf staande 
+voorbeelden waarmee effecten op netwerk niet gekoppeld zijn aan ruimtelijke data die hergebruikt worden vanuit een andere toepassing (denk aan resultaten
+uit onderzoek naar effecten van ingrepen op watersysteem (al dan niet in relatie tot klimaatverandering)).
+Wat deze voorbeelden wel gemeen hebben is dat er ecologische relaties op een bepaalde manier zijn vastgelegd. De uitdaging bij de vraag om 
+effecten van maatregelen te koppelen aan ecologische netwerken in een ruimtelijke setting ligt bij:
+- toegang tot netwerk data (ofwel, hoe moet het netwerk worden opgezet zodat het op basis van input parameters een reflectie geeft op de effecten op het netwerk)
+- de manier waarop de gebruikersinteractie vrom dient te worden gegeven. 
+
+In de mockup van de applicatie is al een idee gegeven van de manier van interactie. Hierbij wordt er vanuit gegaan dat er een set aan 
+scenariodefinities beschikbaar is met gegevens (ruimtelijke) waaruit een keuze gemaakt dient te worden. Die keuzes dienen dan 
+een ecolgisch netwerk te bevragen. De uitdaging hier is niet zozeer de gebruikersinteractie maar het bevragen van het ecologisch netwerk,
+of nog beter, het opzetten van zo'n netwerk op een zodanige manier dat deze bevraagt kan worden. 
+Welke middelen zijn daar nu eigenlijk voor beschikbaar? De volgende opties zijn onderzocht (literatuur studie):
+- Apollo blog geeft een compleet recept om een GraphQL database op te zetten, https://www.apollographql.com/blog/graphql/python/complete-api-guide/. 
+- BEFANA (https://doi.org/10.1016/j.ecolmodel.2022.110065), "A tool for biodiversity-ecosystem functioning assessment by network analysis", geeft een werkend voorbeeld
+van een voedselweb in een cultuurgrasland. Inclusief de invoerbestanden die kunnen dienen als inspiratiebron. 
