@@ -1,8 +1,9 @@
 State of art
 ============
 
-PM Januari 2024 - Beschrijving van de huidige state of art van netwerk perspectieven op ecologie, 
-onderzoek aan ecologische netwerken, en de methoden die men hiervoor gebruikt.
+PM Januari 2024 - We hebben literatuur verzameld en gelezen, maar willen dit nog samenvatten in januari 
+Hierin staat onder andere beschreven wat de huidige state of art is van netwerk perspectieven in ecologie, 
+welk onderzoek met ecologische netwerken wordt gedaan, en de methoden die men hiervoor gebruikt.
 
 De vragen bij deze review zijn bijvoorbeeld:
 

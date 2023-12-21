@@ -27,7 +27,7 @@ Status 21-dec-2023: niet alle hoofdstukken hierboven zijn compleet gevuld, wordt
    state_of_art
    conceptual_implementation
    practical_implementation
-   roadmap
+   
 
 
 Indices and tables

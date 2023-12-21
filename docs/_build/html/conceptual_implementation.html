@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Eerste praktische implementatie" href="practical_implementation.html" />
-    <link rel="prev" title="Visie en doelen" href="vision_and_goal.html" /> 
+    <link rel="prev" title="State of art" href="state_of_art.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,8 +45,8 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introductie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="state_of_art.html">State of art</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vision_and_goal.html">Visie en doelen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="state_of_art.html">State of art</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Conceptuele opzet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="practical_implementation.html">Eerste praktische implementatie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
@@ -78,32 +78,90 @@
              
   <section id="conceptuele-opzet">
 <h1>Conceptuele opzet<a class="headerlink" href="#conceptuele-opzet" title="Link to this heading"></a></h1>
+<p>(pm. IN januari 2024 geupdate met informatie uit de review state of art)</p>
 <section id="wat-is-nodig-qua-kennis">
 <h2>Wat is nodig qua kennis?<a class="headerlink" href="#wat-is-nodig-qua-kennis" title="Link to this heading"></a></h2>
 <p><strong>Voor elke soort: habitat, voedsel, voortplanting</strong></p>
 <p>Om alles in samenhang te analyseren zijn de volgende kennisaspecten nodig:</p>
-<p>Kunnen soorten voorkomen?
-- Relaties tussen abiotiek en soorten voor bepalen fysiek habitat
-- Relaties tussen soorten wanneer een soort het habitat is of creëert voor de ander</p>
-<p>Hebben soorten te eten?
-- Voedsel relaties tussen soorten
-- Abiotiek als (drager van) voedsel</p>
-<p>Kunnen soorten zich voortplanten?
-- Zijn de fysieke omstandigheden aanwezig voor voortplanting? (incl. dispersie)
-- Zijn faciliterende soorten aanwezig?</p>
-<p>Duidelijk is dat er onderlinge afhankelijkheden zijn tussen deze 3 aspecten. Bijvoorbeeld:
-- Als een soort niet kan voorkomen (geen habitat) dan is het niet beschikbaar in het voedselweb voor andere soorten.
-- Als een soort wel kan voorkomen, maar veel van zijn voedsel is niet aanwezig, dan is de kans kleiner dat de soort voorkomt
-- Als een soort wel kan voorkomen en er is voedsel, maar kan zich niet voortplanten, dan is er geen duurzame populatie (en is die afhankelijk van bovenstroomse aanwas)</p>
-<div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/lang/nl/eric_sanderson_new_york_before_the_city" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen>
-</iframe></div></div></section>
+<dl class="simple">
+<dt>Kunnen soorten voorkomen?</dt><dd><ul class="simple">
+<li><p>Relaties tussen abiotiek en soorten voor bepalen fysiek habitat</p></li>
+<li><p>Relaties tussen soorten wanneer een soort het habitat is of creëert voor de ander</p></li>
+</ul>
+</dd>
+<dt>Hebben soorten te eten?</dt><dd><ul class="simple">
+<li><p>Voedsel relaties tussen soorten</p></li>
+<li><p>Abiotiek als (drager van) voedsel</p></li>
+</ul>
+</dd>
+<dt>Kunnen soorten zich voortplanten?</dt><dd><ul class="simple">
+<li><p>Zijn de fysieke omstandigheden aanwezig voor voortplanting? (incl. dispersie)</p></li>
+<li><p>Zijn faciliterende soorten aanwezig?</p></li>
+</ul>
+</dd>
+<dt>Duidelijk is dat er onderlinge afhankelijkheden zijn tussen deze 3 aspecten. Bijvoorbeeld:</dt><dd><ul class="simple">
+<li><p>Als een soort niet kan voorkomen (geen habitat) dan is het niet beschikbaar in het voedselweb voor andere soorten.</p></li>
+<li><p>Als een soort wel kan voorkomen, maar veel van zijn voedsel is niet aanwezig, dan is de kans kleiner dat de soort voorkomt</p></li>
+<li><p>Als een soort wel kan voorkomen en er is voedsel, maar kan zich niet voortplanten, dan is er geen duurzame populatie (en is die afhankelijk van bovenstroomse aanwas)</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Het ruimtelijke aspect</strong></p>
+<p>Het inbrengen van de ruimtelijke setting is een logische stap. Dit kan op meerdere manieren aangepakt worden.</p>
+<dl>
+<dt>Compartiment aanpak</dt><dd><p>Bovenstaande relaties tussen soorten kunnen geplaatst worden in éen ruimtelijk compartiment, waarin wordt verondersteld dat systeemtoestanden
+(hydrologie, morfologie en chemie) en soorten unform verdeeld zijn. PCLAKE is zo’n model waarin het meer (lake) gemodelleerd is in een ruimtelijke eenheid
+(het meer) en daarin een aantal subcompartimenten, zie <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0304380019300201">https://www.sciencedirect.com/science/article/pii/S0304380019300201</a>. Hierin zijn ook trofische
+relaties gemodelleerd.</p>
+<p>Een ander voorbeeld, waarin een rivier in gehomogeniseerde compartimenten is ingedeeld, is bijvoorbeeld het 1-d hydraulische model SOBEK.
+In SOBEK zijn de rivier en aanliggende uiterwaarden opgeknipt in compartimenten dwars op de as van de rivier. Binnen het compartiment zijn de
+beschrijvende variabelen uniform, denk aan de hydraulische weerstand in de uiterwaarden en de bodemschuifspanning.</p>
+<p>Wanneer in deze opzet soort-soort interacties worden meegenomen, afstanden bestaan niet in een compartiment, dan moet verondersteld worden dat binnen een compartiment de afstand tussen
+soorten geen beperkende factor is.</p>
+</dd>
+</dl>
+<p>(add figuren)
+(voeg toe welke vragen we kunnen beantwoorden)</p>
+<dl>
+<dt>Hogere resolutie ruimtelijke aanpak</dt><dd><p>De aanpak die voor abiotiek-soort relaties in rivieren meestal wordt gebruikt is die van een raster gebaseerde aanpak. De abiotiek, bijvoorbeeld
+stroomsnelheid of temperatuur, wordt in een fijn ruimtelijk grid berekend. Vervolgens wordt voor elke gridcel (onafhankelijk) de habitatgeschiktheid
+uitgerekend.</p>
+<p>Wanneer in deze opzet soort-soort relaties meeneemt, en de gridcellen zijn klein, dan wordt de ruimtelijke homerange van soorten een factor om
+rekening mee te houden. Een vis kan over verschillende cellen heen naar zijn voedsel zwemmen.</p>
+</dd>
+</dl>
+<p>(add figuren)
+(welke vragen kunnen we hiermee beantwoorden)</p>
+<p><strong>Hoe kunnen we dit vormgeven voortbouwend op bestaande instrumenten</strong></p>
+<p>Stel we nemen de hogere ruimtelijke resolutie aanpak, en we gebruiken bijvoorbeeld het rekengrid van hydraulische modellen, dan:</p>
+<ol class="arabic simple">
+<li><p>Gebruik de soort - abiotiek relaties uit KRW-Verkenner: produceer ruimtelijke habitat geschiktheidskaarten</p></li>
+<li><p>Bouw een database op van soort - soort relaties voor de 3 genoemde aspecten (voedsel, habitat, voortplanting)</p></li>
+<li><p>Kies voor fauna soorten een ruimtelijke homerange –&gt; paper uit de groep Hendriks met schattingen voor soorten</p></li>
+<li><p>Voeg deze kennisregels toe: reken opnieuw (itererend over de soorten) de habitatgeschiktheid uit met de op abiotiek gestoelde
+kaarten en de habitatkaarten als invoer.</p></li>
+<li><p>Itereer over de soorten totdat uitkomsten niet of nauwelijks veranderen.</p></li>
+</ol>
+<p>Grofweg op deze wijze kunnen de puur op abitisch habitat kaarten als startpunt nemen, en hierop verder bouwen.</p>
+<p>(GG: verder uitschrijven en figuren als voorbeeld nemen)</p>
+<p><strong>Welke bouwstenen zijn beschikbaar</strong></p>
+<dl class="simple">
+<dt>Abiotiek - biotiek</dt><dd><ul class="simple">
+<li><p>deze relaties zijn beschikbaar in de HABITAT kennisregels voor waterplanten, macrofauna en vissen (link)</p></li>
+<li><p>de hydromorfologische relaties kunnen worden gemodelleerd in de ruimte</p></li>
+</ul>
+</dd>
+</dl>
+<p>Voorbeeld figuren: modellen</p>
+<p>(GG: verder uitschrijven: welke soort-soort interactie data is beschikbaar)</p>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="vision_and_goal.html" class="btn btn-neutral float-left" title="Visie en doelen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="state_of_art.html" class="btn btn-neutral float-left" title="State of art" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="practical_implementation.html" class="btn btn-neutral float-right" title="Eerste praktische implementatie" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
