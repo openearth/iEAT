@@ -15,7 +15,9 @@ verbeteren.
 
 De continue ontwikkeling van iEAT, zowel conceptueel als praktisch en technisch, wordt vastgelegd in deze online documentatie.
 
-Status 21-dec-2023: niet alle hoofdstukken hierboven zijn compleet gevuld, wordt afgerond in januari 2024
+Kijk vooral even in het onderdeel "eerste prakstische implementatie voor demo en mockups.
+
+Status 21-dec-2023: state of art & conceptual implementation updated in januari 2024
 
 .. toctree::
    :maxdepth: 2
